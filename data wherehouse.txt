@@ -1,0 +1,111 @@
+OLTP-Online Transactional Process
+==================================
+In this Transactional data avilable 
+In this we are Using DML - Operations
+----
+Insert
+Update
+Delete
+having less data in OLTP 
+
+
+OLAP- Online Analysis Process- Data wherehouse
+=============================================
+We are storing Historical data in one place 
+and from there we are analysis is called data where house (OLAP Type database)
+In data wherehouse Data is comming from OLTP databases (files,ERP Applications,databases)
+Data analysis, for generating reportings
+
+DRL- Data retrie language (Select Query)
+In Data wherehouse For analasysis process we are using different types of normalization forms
+we can analysis business by using data wherehouse
+
+Normalization
+=============
+Deviding main data into no.of different tables
+In this DML Operations are flxible
+
+De-normalization
+================
+No.of different (divided data) clubbing into single table
+In this Query ferformanance flexeble
+
+Main data -- in dimension tables (customer info
+address, phone, location, customer lo etc)
+
+Any data which we cannot taken as a measure and which is having primary data,or master data 
+stored as in dimmention tables 
+
+Any transactional type data stored in fact tables (what ever the transactions he do
+in 5 years he do different orders,  different rates, deliery dates different dates like etc)
+child data/transactional data- fact table
+
+Types of dimension tables
+=====================
+
+1)junk dimension
+=====================
+Transactional data having millions of records
+if we have millions of records in a fact table, in that some columns having low cardinality value
+means below type of status fields
+active/inactive
+male/female
+0/1
+yes/no
+delivered/shipped/undelivered/not delivered
+process/pending/completed
+
+low cardinalaty value means flag related columns getting performance issue when we are taking reports
+we are removing low cardinality field and creating new table 
+that type of value related columens we are stored in junk dimenstion tables.
+by using these type of tables performanance will increase 
+no measured data, just flag type data avilable
+
+
+2)conformed dimension
+====================
+
+In a wherehouse we are having multiple data marts (sales,Hr,customers)data
+
+when common dimention table used in multiple models 
+
+tv company
+==========
+sales tabel- tv sales
+
+if any table which is using more than one dimenstion model or more than one data mart is called a
+conformed dimention table
+inventory table
+sales table
+maufacturing
+
+degenerate dimension
+===================
+header and lines tables
+
+orders header --- parent table/fact table
+order line --- child table/transactional table/ to quantity/price
+shipment header
+shipment line
+sales header
+sales line
+invioce header
+invoice line
+order header is pare
+
+it is not a fact table or it is not a fully dimension table but we can treate as a dimension table
+
+Inferred dimension--late arrival dimmension
+===================================
+Dimension table ---parent
+fact table --- child
+fact-- dim_id (key) -1 //(dimension_id or surrogate key) inserted as -1 in fact table
+when the 
+
+in some sinarios we are having fact table information and not having some info dimension table
+
+by using some script we are updating dimention table after fact table key information comming  
+
+
+
+
